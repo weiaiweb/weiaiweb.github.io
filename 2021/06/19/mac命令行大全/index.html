@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="weiai" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      mac命令行大全 
+      
+      
+      |
+    
+     weiaiweb
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <link rel="icon" href="./images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="./images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">WEIAI</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">mac命令行大全</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间"></i>
+          2021-06-19 17:04:16
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="Mac-终端命令大全"><a href="#Mac-终端命令大全" class="headerlink" title="Mac 终端命令大全"></a>Mac 终端命令大全</h1><h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">mkdir</td>
+<td align="left">创建一个目录</td>
+<td align="left">mkdir dirname</td>
+</tr>
+<tr>
+<td align="left">rmdir</td>
+<td align="left">删除一个目录</td>
+<td align="left">rmdir dirname</td>
+</tr>
+<tr>
+<td align="left">mvdir</td>
+<td align="left">移动或重命名一个目录</td>
+<td align="left">mvdir dir1 dir2</td>
+</tr>
+<tr>
+<td align="left">cd</td>
+<td align="left">改变当前目录</td>
+<td align="left">cd dirname</td>
+</tr>
+<tr>
+<td align="left">pwd</td>
+<td align="left">显示当前目录的路径名</td>
+<td align="left">pwd</td>
+</tr>
+<tr>
+<td align="left">ls</td>
+<td align="left">显示当前目录的内容</td>
+<td align="left">ls -la</td>
+</tr>
+<tr>
+<td align="left">dircmp</td>
+<td align="left">比较两个目录的内容</td>
+<td align="left">dircmp dir1 dir2</td>
+</tr>
+</tbody></table>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">cat</td>
+<td align="left">显示或连接文件</td>
+<td align="left">cat filename</td>
+</tr>
+<tr>
+<td align="left">pg</td>
+<td align="left">分页格式化显示文件内容</td>
+<td align="left">pg filename</td>
+</tr>
+<tr>
+<td align="left">more</td>
+<td align="left">分屏显示文件内容</td>
+<td align="left">more filename</td>
+</tr>
+<tr>
+<td align="left">od</td>
+<td align="left">显示非文本文件的内容</td>
+<td align="left">od -c filename</td>
+</tr>
+<tr>
+<td align="left">cp</td>
+<td align="left">复制文件或目录</td>
+<td align="left">cp file1 file2</td>
+</tr>
+<tr>
+<td align="left">rm</td>
+<td align="left">删除文件或目录</td>
+<td align="left">rm filename</td>
+</tr>
+<tr>
+<td align="left">mv</td>
+<td align="left">改变文件名或所在目录</td>
+<td align="left">mv file1 file2</td>
+</tr>
+<tr>
+<td align="left">ln</td>
+<td align="left">联接文件</td>
+<td align="left">ln -s file1 file2</td>
+</tr>
+<tr>
+<td align="left">find</td>
+<td align="left">使用匹配表达式查找文件</td>
+<td align="left">find . -name “*.c” -print</td>
+</tr>
+<tr>
+<td align="left">file</td>
+<td align="left">显示文件类型</td>
+<td align="left">file filename</td>
+</tr>
+<tr>
+<td align="left">open</td>
+<td align="left">使用默认的程序打开文件</td>
+<td align="left">open filename</td>
+</tr>
+</tbody></table>
+<h2 id="选择操作"><a href="#选择操作" class="headerlink" title="选择操作"></a>选择操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">head</td>
+<td align="left">显示文件的最初几行</td>
+<td align="left">head -20 filename</td>
+</tr>
+<tr>
+<td align="left">tail</td>
+<td align="left">显示文件的最后几行</td>
+<td align="left">tail -15 filename</td>
+</tr>
+<tr>
+<td align="left">cut</td>
+<td align="left">显示文件每行中的某些域</td>
+<td align="left">cut -f1,7 -d: /etc/passwd</td>
+</tr>
+<tr>
+<td align="left">colrm</td>
+<td align="left">从标准输入中删除若干列</td>
+<td align="left">colrm 8 20 file2</td>
+</tr>
+<tr>
+<td align="left">paste</td>
+<td align="left">横向连接文件</td>
+<td align="left">paste file1 file2</td>
+</tr>
+<tr>
+<td align="left">diff</td>
+<td align="left">比较并显示两个文件的差异</td>
+<td align="left">diff file1 file2</td>
+</tr>
+<tr>
+<td align="left">sed</td>
+<td align="left">非交互方式流编辑器</td>
+<td align="left">sed “s/red/green/g” filename</td>
+</tr>
+<tr>
+<td align="left">grep</td>
+<td align="left">在文件中按模式查找</td>
+<td align="left">grep “^[a-zA-Z]” filename</td>
+</tr>
+<tr>
+<td align="left">awk</td>
+<td align="left">在文件中查找并处理模式</td>
+<td align="left">awk ‘{print $1 $1}’ filename</td>
+</tr>
+<tr>
+<td align="left">sort</td>
+<td align="left">排序或归并文件</td>
+<td align="left">sort -d -f -u file1</td>
+</tr>
+<tr>
+<td align="left">uniq</td>
+<td align="left">去掉文件中的重复行</td>
+<td align="left">uniq file1 file2</td>
+</tr>
+<tr>
+<td align="left">comm</td>
+<td align="left">显示两有序文件的公共和非公共行</td>
+<td align="left">comm file1 file2</td>
+</tr>
+<tr>
+<td align="left">wc</td>
+<td align="left">统计文件的字符数、词数和行数</td>
+<td align="left">wc filename</td>
+</tr>
+<tr>
+<td align="left">nl</td>
+<td align="left">给文件加上行号</td>
+<td align="left">nl file1 &gt;file2</td>
+</tr>
+</tbody></table>
+<h2 id="安全操作"><a href="#安全操作" class="headerlink" title="安全操作"></a>安全操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">passwd</td>
+<td align="left">修改用户密码</td>
+<td align="left">passwd</td>
+</tr>
+<tr>
+<td align="left">chmod</td>
+<td align="left">改变文件或目录的权限</td>
+<td align="left">chmod ug+x filename</td>
+</tr>
+<tr>
+<td align="left">umask</td>
+<td align="left">定义创建文件的权限掩码</td>
+<td align="left">umask 027</td>
+</tr>
+<tr>
+<td align="left">chown</td>
+<td align="left">改变文件或目录的属主</td>
+<td align="left">chown newowner filename</td>
+</tr>
+<tr>
+<td align="left">chgrp</td>
+<td align="left">改变文件或目录的所属组</td>
+<td align="left">chgrp staff filename</td>
+</tr>
+<tr>
+<td align="left">xlock</td>
+<td align="left">给终端上锁</td>
+<td align="left">xlock -remote</td>
+</tr>
+</tbody></table>
+<h2 id="编程操作"><a href="#编程操作" class="headerlink" title="编程操作"></a>编程操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">make</td>
+<td align="left">维护可执行程序的最新版本</td>
+<td align="left">make</td>
+</tr>
+<tr>
+<td align="left">touch</td>
+<td align="left">更新文件的访问和修改时间</td>
+<td align="left">touch -m 05202400 filename</td>
+</tr>
+<tr>
+<td align="left">dbx</td>
+<td align="left">命令行界面调试工具</td>
+<td align="left">dbx a.out</td>
+</tr>
+<tr>
+<td align="left">xde</td>
+<td align="left">图形用户界面调试工具</td>
+<td align="left">xde a.out</td>
+</tr>
+</tbody></table>
+<h2 id="进程操作"><a href="#进程操作" class="headerlink" title="进程操作"></a>进程操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ps</td>
+<td align="left">显示进程当前状态</td>
+<td align="left">ps u</td>
+</tr>
+<tr>
+<td align="left">kill</td>
+<td align="left">终止进程</td>
+<td align="left">kill -9 30142</td>
+</tr>
+<tr>
+<td align="left">nice</td>
+<td align="left">改变待执行命令的优先级</td>
+<td align="left">nice cc -c *.c</td>
+</tr>
+<tr>
+<td align="left">renice</td>
+<td align="left">改变已运行进程的优先级</td>
+<td align="left">renice +20 32768</td>
+</tr>
+</tbody></table>
+<h2 id="时间操作"><a href="#时间操作" class="headerlink" title="时间操作"></a>时间操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">date</td>
+<td align="left">显示系统的当前日期和时间</td>
+<td align="left">date</td>
+</tr>
+<tr>
+<td align="left">cal</td>
+<td align="left">显示日历</td>
+<td align="left">cal 8 1996</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="left">统计程序的执行时间</td>
+<td align="left">time a.out</td>
+</tr>
+</tbody></table>
+<h2 id="网络与通信操作"><a href="#网络与通信操作" class="headerlink" title="网络与通信操作"></a>网络与通信操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">telnet</td>
+<td align="left">远程登录</td>
+<td align="left">telnet hpc.sp.net.edu.cn</td>
+</tr>
+<tr>
+<td align="left">rlogin</td>
+<td align="left">远程登录</td>
+<td align="left">rlogin hostname -l username</td>
+</tr>
+<tr>
+<td align="left">rsh</td>
+<td align="left">在远程主机执行指定命令</td>
+<td align="left">rsh f01n03 date</td>
+</tr>
+<tr>
+<td align="left">ftp</td>
+<td align="left">在本地主机与远程主机之间传输文件</td>
+<td align="left">ftp ftp.sp.net.edu.cn</td>
+</tr>
+<tr>
+<td align="left">rcp</td>
+<td align="left">在本地主机与远程主机 之间复制文件</td>
+<td align="left">rcp file1 host1:file2</td>
+</tr>
+<tr>
+<td align="left">ping</td>
+<td align="left">给一个网络主机发送 回应请求</td>
+<td align="left">ping hpc.sp.net.edu.cn</td>
+</tr>
+<tr>
+<td align="left">mail</td>
+<td align="left">阅读和发送电子邮件</td>
+<td align="left">mail</td>
+</tr>
+<tr>
+<td align="left">write</td>
+<td align="left">给另一用户发送报文</td>
+<td align="left">write username pts/1</td>
+</tr>
+<tr>
+<td align="left">mesg</td>
+<td align="left">允许或拒绝接收报文</td>
+<td align="left">mesg n</td>
+</tr>
+</tbody></table>
+<h2 id="Korn-Shell-命令"><a href="#Korn-Shell-命令" class="headerlink" title="Korn Shell 命令"></a>Korn Shell 命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">history</td>
+<td align="left">列出最近执行过的 几条命令及编号</td>
+<td align="left">history</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">重复执行最近执行过的 某条命令</td>
+<td align="left">r -2</td>
+</tr>
+<tr>
+<td align="left">alias</td>
+<td align="left">给某个命令定义别名</td>
+<td align="left">alias del=rm -i</td>
+</tr>
+<tr>
+<td align="left">unalias</td>
+<td align="left">取消对某个别名的定义</td>
+<td align="left">unalias del</td>
+</tr>
+</tbody></table>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">uname</td>
+<td align="left">显示操作系统的有关信息</td>
+<td align="left">uname -a</td>
+</tr>
+<tr>
+<td align="left">clear</td>
+<td align="left">清除屏幕或窗口内容</td>
+<td align="left">clear</td>
+</tr>
+<tr>
+<td align="left">env</td>
+<td align="left">显示当前所有设置过的环境变量</td>
+<td align="left">env</td>
+</tr>
+<tr>
+<td align="left">who</td>
+<td align="left">列出当前登录的所有用户</td>
+<td align="left">who</td>
+</tr>
+<tr>
+<td align="left">whoami</td>
+<td align="left">显示当前正进行操作的用户名</td>
+<td align="left">whoami</td>
+</tr>
+<tr>
+<td align="left">tty</td>
+<td align="left">显示终端或伪终端的名称</td>
+<td align="left">tty</td>
+</tr>
+<tr>
+<td align="left">stty</td>
+<td align="left">显示或重置控制键定义</td>
+<td align="left">stty -a</td>
+</tr>
+<tr>
+<td align="left">du</td>
+<td align="left">查询磁盘使用情况</td>
+<td align="left">du -k subdir</td>
+</tr>
+<tr>
+<td align="left">df</td>
+<td align="left">显示文件系统的总空间和可用空间</td>
+<td align="left">df /tmp</td>
+</tr>
+<tr>
+<td align="left">w</td>
+<td align="left">显示当前系统活动的总信息</td>
+<td align="left">w</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/06/19/hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间"></i>
+              2021-06-19 17:04:16
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mac-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8"><span class="toc-text">Mac 终端命令大全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-text">目录操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%93%8D%E4%BD%9C"><span class="toc-text">选择操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">安全操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-text">编程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-text">进程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%93%8D%E4%BD%9C"><span class="toc-text">时间操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E9%80%9A%E4%BF%A1%E6%93%8D%E4%BD%9C"><span class="toc-text">网络与通信操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Korn-Shell-%E5%91%BD%E4%BB%A4"><span class="toc-text">Korn Shell 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">其他命令</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/weiaiweb/weiaiweb.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" href="">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="wechat" href="">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="weibo" href="">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>

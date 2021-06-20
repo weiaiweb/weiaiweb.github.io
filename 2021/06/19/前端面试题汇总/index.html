@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="weiai" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      前端面试题汇总 
+      
+      
+      |
+    
+     weiaiweb
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <link rel="icon" href="./images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="./images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">WEIAI</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">前端面试题汇总</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间"></i>
+          2021-06-19 16:59:27
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><ul>
+<li><p>javascript数据类型:<br>  原始数据类型：undefined,null,boolean,number,string<br>  引用数据类型：对象,数组,函数<br>  区别：存储的位置不同<br>  1、原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>2、引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体</p>
+</li>
+<li><p>javascript内置的对象:<br>  Object是所有内置对象的父对象<br>  数据封装类对象：Object、Array、Boolean、Number 和 String<br>其他对象：Function、Arguments、Math、Date、RegExp、Error</p>
+</li>
+<li><p>javascript原型、原型链及其特点:<br>  每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，<br>  如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，<br>  于是就这样一直找下去，也就是我们平时所说的原型链的概念。<br>  关系：<code>instance.constructor.prototype = instance.__proto__</code></p>
+<p>  特点：<br>  JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。<br>  当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，<br>  就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到 Object 内建对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Func()&#123;&#125;</span><br><span class="line">Func.prototype.name = &quot;Sean&quot;;</span><br><span class="line">Func.prototype.getInfo = function() &#123;</span><br><span class="line">  return this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Func();//现在可以参考var person = Object.create(oldObject);</span><br><span class="line">console.log(person.getInfo());//它拥有了Func的属性和方法</span><br><span class="line">//&quot;Sean&quot;</span><br><span class="line">console.log(Func.prototype);</span><br><span class="line">// Func &#123; name=&quot;Sean&quot;, getInfo=function()&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>javascript创建对象:<br>   javascript创建对象简单的说,就是使用内置对象或各种自定义对象，还可以用JSON；写法有很多种，也能混合使用。<br>   1、对象字面量的方式<br>   <code>person=&#123;firstname:&quot;Mark&quot;,lastname:&quot;Yun&quot;,age:25,eyecolor:&quot;black&quot;&#125;;</code><br>   2、用function来模拟无参的构造函数</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;&#125;</span><br><span class="line">var person=new Person();//定义一个function，如果使用new&quot;实例化&quot;,该function可以看作是一个Class</span><br><span class="line">person.name=&quot;Mark&quot;;</span><br><span class="line">person.age=&quot;25&quot;;</span><br><span class="line">person.work=function()&#123;</span><br><span class="line">alert(person.name+&quot; hello...&quot;);</span><br><span class="line">&#125;</span><br><span class="line">person.work();</span><br></pre></td></tr></table></figure>
+<p>3、用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Pet(name,age,hobby)&#123;</span><br><span class="line">   this.name=name;//this作用域：当前对象</span><br><span class="line">   this.age=age;</span><br><span class="line">   this.hobby=hobby;</span><br><span class="line">   this.eat=function()&#123;</span><br><span class="line">      alert(&quot;我叫&quot;+this.name+&quot;,我喜欢&quot;+this.hobby+&quot;,是个程序员&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">var maidou =new Pet(&quot;麦兜&quot;,25,&quot;coding&quot;);//实例化、创建对象</span><br><span class="line">maidou.eat();//调用eat方法</span><br></pre></td></tr></table></figure>
+<p>   4、用工厂方式来创建（内置对象）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var wcDog =new Object();</span><br><span class="line">wcDog.name=&quot;旺财&quot;;</span><br><span class="line">wcDog.age=3;</span><br><span class="line">wcDog.work=function()&#123;</span><br><span class="line"> alert(&quot;我是&quot;+wcDog.name+&quot;,汪汪汪......&quot;);</span><br><span class="line">&#125;</span><br><span class="line">wcDog.work();</span><br></pre></td></tr></table></figure>
+<p>5、用原型方式来创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	function Dog()&#123;&#125;</span><br><span class="line">Dog.prototype.name=&quot;旺财&quot;;</span><br><span class="line">Dog.prototype.eat=function()&#123;</span><br><span class="line">	alert(this.name+&quot;是个吃货&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var wangcai =new Dog();</span><br><span class="line">wangcai.eat();</span><br></pre></td></tr></table></figure>
+<p>6、用混合方式来创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Car(name,price)&#123;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.price=price;</span><br><span class="line">&#125;</span><br><span class="line">Car.prototype.sell=function()&#123;</span><br><span class="line">	alert(&quot;我是&quot;+this.name+&quot;，我现在卖&quot;+this.price+&quot;万元&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var camry =new Car(&quot;凯美瑞&quot;,27);</span><br><span class="line">camry.sell();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"> 	</span><br><span class="line">- 什么是闭包（closure），为什么要用它？</span><br><span class="line">	闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。</span><br><span class="line"> 	闭包的特性：</span><br><span class="line">		1.函数内再嵌套函数</span><br><span class="line">		2.内部函数可以引用外层的参数和变量</span><br><span class="line">		3.参数和变量不会被垃圾回收机制回收</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## html</span><br><span class="line">- 行内元素、块级元素、空元素有哪些？</span><br><span class="line">	(1) 行内元素:`a b span img input select strong`</span><br><span class="line">	(2) 块级元素:`div ul ol li dl dt dd h1～h6 p`</span><br><span class="line">	(3) 常见空元素:`&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;`</span><br><span class="line">- link和@import的区别？</span><br><span class="line">	(1) link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</span><br><span class="line">	(2) 页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</span><br><span class="line">	(3) import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;</span><br><span class="line">- html5新特性、移除元素。如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</span><br><span class="line">	(1)  新增元素:</span><br><span class="line">		  主要增加的是关于图像，位置，存储，多任务等功能</span><br><span class="line">		  绘画 canvas;</span><br><span class="line">		  用于媒介回放的 video 和 audio 元素;</span><br><span class="line">		  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;</span><br><span class="line">	    sessionStorage 的数据在浏览器关闭后自动删除;</span><br><span class="line">		  语意化更好的内容元素，比如 article、footer、header、nav、section;</span><br><span class="line">		  表单控件，calendar、date、time、email、url、search;</span><br><span class="line">		  新的技术webworker, websocket, Geolocation;</span><br><span class="line">	(2)  移除的元素:</span><br><span class="line">		  纯表现的元素：basefont，big，center，font, s，strike，tt，u;</span><br><span class="line">		  对可用性产生负面影响的元素：frame，frameset，noframes；</span><br><span class="line">	(3)	支持HTML5新标签：</span><br><span class="line">			IE8/IE7/IE6支持通过document.createElement方法产生的标签，</span><br><span class="line">			可以利用这一特性让这些浏览器支持HTML5新标签，</span><br><span class="line">			浏览器支持新标签后，还需要添加标签默认的样式。</span><br><span class="line">			当然也可以直接使用成熟的框架、比如html5shim;</span><br></pre></td></tr></table></figure>
+<pre><code>      &lt;!--[if lt IE 9]&gt;
+          &lt;script&gt; src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&lt;/script&gt;
+      &lt;![endif]--&gt;
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">	(4)	区分HTML5与HTML： DOCTYPE声明\新增的结构元素\功能元素</span><br><span class="line">- cookies，sessionStorage 和 localStorage 的区别</span><br><span class="line">  cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。</span><br><span class="line">  cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。</span><br><span class="line">  sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</span><br><span class="line">  存储大小：</span><br><span class="line">  	cookie数据大小不能超过4k。</span><br><span class="line">  	sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</span><br><span class="line">  有期时间：</span><br><span class="line">  	localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</span><br><span class="line">  	sessionStorage  数据在当前浏览器窗口关闭后自动删除。</span><br><span class="line">  	cookie          设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</span><br><span class="line">- HTML5有哪些新特性、移除了哪些元素？</span><br><span class="line">	Html5新增了 27 个元素，废弃了 16 个元素，根据现有的标准规范，把 HTML5 的元素按优先级定义为结构性属性、级块性元素、行内语义性元素和交互性元素 4 大类。</span><br><span class="line">	结构性元素主要负责web上下文结构的定义</span><br><span class="line">	section：在 web 页面应用中，该元素也可以用于区域的章节描述。</span><br><span class="line">	header：页面主体上的头部， header 元素往往在一对 body 元素中。</span><br><span class="line">	footer：页面的底部（页脚），通常会标出网站的相关信息。</span><br><span class="line">	nav：专门用于菜单导航、链接导航的元素，是 navigator 的缩写。</span><br><span class="line">	article：用于表现一篇文章的主体内容，一般为文字集中显示的区域。</span><br><span class="line">	级块性元素主要完成web页面区域的划分，确保内容的有效分割。</span><br><span class="line">	aside：用于表达注记、贴士、侧栏、摘要、插入的引用等作为补充主体的内容。</span><br><span class="line">	figure：是对多个元素进行组合并展示的元素，通常与 ficaption 联合使用。</span><br><span class="line">	code：表示一段代码块。</span><br><span class="line">	dialog：用于表达人与人之间的对话，该元素包含 dt 和 dd 这两个组合元素， dt 用于表示说话者，而 dd 用来表示说话内容。</span><br><span class="line">	行内语义性元素主要完成web页面具体内容的引用和描述，是丰富内容展示的基础。</span><br><span class="line">	meter：表示特定范围内的数值，可用于工资、数量、百分比等。</span><br><span class="line">	time：表示时间值。</span><br><span class="line">	progress：用来表示进度条，可通过对其 max 、 min 、 step 等属性进行控制，完成对进度的表示和监事。</span><br><span class="line">	video：视频元素，用于支持和实现视频文件的直接播放，支持缓冲预载和多种视频媒体格式。</span><br><span class="line">	audio：音频元素，用于支持和实现音频文件的直接播放，支持缓冲预载和多种音频媒体格式。</span><br><span class="line">	交互性元素主要用于功能性的内容表达，会有一定的内容和数据的关联，是各种事件的基础。</span><br><span class="line">	details：用来表示一段具体的内容，但是内容默认可能不显示，通过某种手段（如单击）与 legend 交互才会显示出来。</span><br><span class="line">	datagrid：用来控制客户端数据与显示，可以由动态脚本及时更新。</span><br><span class="line">	menu：主要用于交互菜单（曾被废弃又被重新启用的元素）。</span><br><span class="line">	command：用来处理命令按钮。</span><br><span class="line">- 浏览器页面有哪三层构成，分别是什么，作用是什么?</span><br><span class="line">	构成：结构层、表示层、行为层 </span><br><span class="line">	分别是：HTML、CSS、JavaScript </span><br><span class="line">	作用：HTML实现页面结构，CSS完成页面的表现与风格，JavaScript实现一些客户端的功能与业务。</span><br><span class="line">- 你做的网页在哪些浏览器测试过,这些浏览器的内核分别是什么?</span><br><span class="line">	a、 IE: trident 内核</span><br><span class="line">	b、 Firefox ： gecko 内核</span><br><span class="line">	c、 Safari:webkit 内核</span><br><span class="line">	d、 Opera: 以前是 presto 内核， Opera 现已改用 Google Chrome 的 Blink 内核</span><br><span class="line">	e、 Chrome:Blink( 基于 webkit ， Google 与 Opera Software 共同开发 )</span><br><span class="line">- HTML5行内元素有哪些,块级元素有哪些, 空元素有哪些?</span><br><span class="line">	(1)行内元素</span><br><span class="line">	* a - 锚点</span><br><span class="line">	* abbr - 缩写</span><br><span class="line">	* acronym - 首字</span><br><span class="line">	* b - 粗体 ( 不推荐 )</span><br><span class="line">	* bdo - bidi override</span><br><span class="line">	* big - 大字体</span><br><span class="line">	* br - 换行</span><br><span class="line">	* cite - 引用</span><br><span class="line">	* code - 计算机代码 ( 在引用源码的时候需要 )</span><br><span class="line">	* dfn - 定义字段</span><br><span class="line">	* em - 强调</span><br><span class="line">	* font - 字体设定 ( 不推荐 )</span><br><span class="line">	* i - 斜体</span><br><span class="line">	* img - 图片</span><br><span class="line">	* input - 输入框</span><br><span class="line">	* kbd - 定义键盘文本</span><br><span class="line">	* label - 表格标签</span><br><span class="line">	* q - 短引用</span><br><span class="line">	* s - 中划线 ( 不推荐 )</span><br><span class="line">	* samp - 定义范例计算机代码</span><br><span class="line">	* select - 项目选择</span><br><span class="line">	* small - 小字体文本</span><br><span class="line">	* span - 常用内联容器，定义文本内区块</span><br><span class="line">	* strike - 中划线</span><br><span class="line">	* strong - 粗体强调</span><br><span class="line">	* sub - 下标</span><br><span class="line">	* sup - 上标</span><br><span class="line">	* textarea - 多行文本输入框</span><br><span class="line">	* tt - 电传文本</span><br><span class="line">	* u - 下划线</span><br><span class="line">	* var - 定义变量</span><br><span class="line">	(2)块元素 (block element)</span><br><span class="line">	* address - 地址</span><br><span class="line">	* blockquote - 块引用</span><br><span class="line">	* center - 居中对齐块</span><br><span class="line">	* dir - 目录列表</span><br><span class="line">	* div - 常用块级容易，也是 css layout 的主要标签</span><br><span class="line">	* dl - 定义列表</span><br><span class="line">	* fieldset - form控制组</span><br><span class="line">	* form - 交互表单</span><br><span class="line">	* h1 - 大标题</span><br><span class="line">	* h2 - 副标题</span><br><span class="line">	* h3 - 3级标题</span><br><span class="line">	* h4 - 4级标题</span><br><span class="line">	* h5 - 5级标题</span><br><span class="line">	* h6 - 6级标题</span><br><span class="line">	* hr - 水平分隔线</span><br><span class="line">	* isindex - input prompt</span><br><span class="line">	* menu - 菜单列表</span><br><span class="line">	* noframes - frames可选内容，（对于不支持 frame 的浏览器显示此区块内容</span><br><span class="line">	* noscript - ）可选脚本内容（对于不支持 script 的浏览器显示此内容）</span><br><span class="line">	* ol - 排序表单</span><br><span class="line">	* p - 段落</span><br><span class="line">	* pre - 格式化文本</span><br><span class="line">	* table - 表格</span><br><span class="line">	* ul - 非排序列表</span><br><span class="line">	(3)可变元素</span><br><span class="line">	可变元素为根据上下文语境决定该元素为块元素或者内联元素。</span><br><span class="line">	* applet - java applet</span><br><span class="line">	* button - 按钮</span><br><span class="line">	* del - 删除文本</span><br><span class="line">	* iframe - inline frame</span><br><span class="line">	* ins - 插入的文本</span><br><span class="line">	* map - 图片区块 (map)</span><br><span class="line">	* object - object对象</span><br><span class="line">	* script - 客户端脚本</span><br><span class="line">	(4)空元素 ( 在 HTML[1] 元素中，没有内容的 HTML 元素被称为空元素 )</span><br><span class="line">	* `&lt;br/&gt;` //换行</span><br><span class="line">	* `&lt;hr&gt;` //分隔线</span><br><span class="line">	* `&lt;input&gt;` //文本框等</span><br><span class="line">	* `&lt;img&gt;` //图片</span><br><span class="line">	* `&lt;link&gt; &lt;meta&gt;`</span><br><span class="line">- 为什么HTML5不需要引入DTD(document type definition 文档类型定义)</span><br><span class="line">	在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。 HTML5 不基于 SGML，所以不需要引用 DTD。</span><br><span class="line"></span><br><span class="line">## css</span><br><span class="line">- 盒模型</span><br><span class="line">	(1) 有两种， IE 盒子模型、W3C 盒子模型；</span><br><span class="line">	(2) 盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；</span><br><span class="line">	(3) 区  别： IE的content部分把 border 和 padding计算了进去;</span><br><span class="line">- css选择器</span><br><span class="line">	(1) id选择器（ # myid）</span><br><span class="line">	(2) 类选择器（.myclassname）</span><br><span class="line">	(3) 标签选择器（div, h1, p）</span><br><span class="line">	(4) 相邻选择器（h1 + p）</span><br><span class="line">	(5) 子选择器（ul &gt; li）</span><br><span class="line">	(6) 后代选择器（li a）</span><br><span class="line">	(7) 通配符选择器（ * ）</span><br><span class="line">	(8) 属性选择器（a[rel = &quot;external&quot;]）</span><br><span class="line">	(9) 伪类选择器（a:hover, li:nth-child）</span><br><span class="line">- 哪些属性可以继承</span><br><span class="line">	(1) 可继承的样式： font-size font-family color, UL LI DL DD DT;</span><br><span class="line">	(2) 不可继承的样式：border padding margin width height ;</span><br><span class="line">- CSS优先级算法</span><br><span class="line">	* 优先级就近原则，同权重情况下样式定义最近者为准;</span><br><span class="line">	* 载入样式以最后载入的定位为准;</span><br><span class="line">  优先级为:</span><br><span class="line">  	同权重: 内联样式表（标签内部）&gt; 嵌入样式表（当前文件中）&gt; 外部样式表（外部文件中）。</span><br><span class="line">  	!important &gt;  id &gt; class &gt; tag</span><br><span class="line">  	important 比 内联优先级高</span><br><span class="line">- 居中</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>div{<br>  width:100%;<br>  height:100%;<br>  position:absolute;<br>  left:50%;<br>  top:50%;<br>  transform: translate(-50%,-50%);<br>  -ms-transform: translate(-50%,-50%);  /* IE9及以上支持 <em>/<br>  -webkit-transform: translate(-50%,-50%);    /</em> Safari and Chrome <em>/<br>  -o-transform: translate(-50%,-50%);     /</em> Opera <em>/<br>  -moz-transform: translate(-50%,-50%);       /</em> Firefox */<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">- display</span><br><span class="line">	(1)	block       	块类型。默认宽度为父元素宽度，可设置宽高，换行显示。</span><br><span class="line">	(2)	none        	缺省值。象行内元素类型一样显示。</span><br><span class="line">	(3)	inline      	行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。</span><br><span class="line">	(4)	inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。</span><br><span class="line">	(5)	list-item   	象块类型元素一样显示，并添加样式列表标记。</span><br><span class="line">	(6)	table       	此元素会作为块级表格来显示。</span><br><span class="line">	(7)	inherit     	规定应该从父元素继承 display 属性的值。</span><br><span class="line">- CSS3新特性</span><br><span class="line">	(1)	新增各种CSS选择器	（: not(.input)：所有 class 不是“input”的节点）</span><br><span class="line">	(2)	圆角		    （border-radius:8px）</span><br><span class="line">	(3)	多列布局	    （multi-column layout）</span><br><span class="line">	(4)	阴影和反射	（Shadow\Reflect）</span><br><span class="line">	(5)	文字特效		（text-shadow、）</span><br><span class="line">	(6)	文字渲染		（Text-decoration）</span><br><span class="line">	(7)	线性渐变		（gradient）</span><br><span class="line">	(8)	旋转		 	（transform）</span><br><span class="line">	(9)	缩放,定位,倾斜,动画,多背景</span><br><span class="line">	`例如:transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:`</span><br><span class="line">- 清除浮动</span><br><span class="line">	清除浮动是为了清除使用浮动元素产生的影响。浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示</span><br></pre></td></tr></table></figure>
+<p>.clearfix:after{content: “200B”;visibility: hidden;display: block;height:0;font-size:0;clear:both;}<br>.clearfix{ *zoom:1; }<br>```<br>(1) display:block 使生成的元素以块级元素显示,占满剩余空间;<br>(2) height:0 避免生成内容破坏原有布局的高度。<br>(3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;<br>(4) 通过 content:”.”生成内容作为最后一个元素，至于content里面是点还是其他都是可以的；<br>(5) zoom：1 触发IE hasLayout。</p>
+</li>
+</ul>
+<h2 id="framework"><a href="#framework" class="headerlink" title="framework"></a>framework</h2><p>1、vue<br>2、jquery<br>3、nodejs</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间"></i>
+              2021-06-19 16:59:27
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2021/06/19/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB2020/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript"><span class="toc-text">javascript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#framework"><span class="toc-text">framework</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/weiaiweb/weiaiweb.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" href="">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="wechat" href="">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="weibo" href="">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
